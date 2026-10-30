@@ -1,0 +1,1019 @@
+# PROJECT: COMPLETE AFFORDMED WEBSITE RECREATION
+
+## 1. PROJECT OBJECTIVE
+
+Build a complete, production-quality, responsive medical equipment procurement website inspired by the original AffordMed website.
+
+REFERENCE WEBSITE:
+https://www.affordmed.com/
+
+The objective is to reproduce the reference website's existing UI as faithfully as possible, including its visual identity, color palette, typography, page layouts, header, navigation, product cards, spacing, image proportions, buttons, forms, and footer.
+
+This is a website recreation project, NOT a redesign.
+
+Do not replace the original design with an unrelated futuristic, cyberpunk, glassmorphism, dashboard, or generic SaaS design.
+
+First inspect the reference website. Identify its visual patterns and establish a reusable design system before implementing individual pages.
+
+If direct website inspection is unavailable, use supplied screenshots and accessible page content as the source of truth. Do not invent exact colors, measurements, or content and claim that they are original.
+
+Create a complete multi-page application with functional navigation and interactions.
+
+## 2. DESIGN REFERENCE AND VISUAL FIDELITY
+
+Treat the original website as the primary design reference.
+
+Before writing components:
+
+1. Inspect the homepage at desktop resolution.
+2. Inspect the header, navigation, logo, hero section, content containers, buttons, cards, and footer.
+3. Inspect the equipment catalog and its filters.
+4. Inspect the About Us and Contact Us pages.
+5. Inspect the original typography, font weights, line heights, and text alignment.
+6. Inspect the background colors, brand colors, borders, shadows, radii, and spacing.
+7. Observe the mobile layout and navigation if available.
+8. Create a reusable set of design tokens based on the observed UI.
+9. Reuse the same tokens across every page.
+
+Do not simply reproduce the general concept of the website. Reproduce the actual interface patterns.
+
+Avoid unnecessary design changes.
+
+Do not introduce:
+- Oversized decorative gradients that do not exist in the reference.
+- Unnecessary neon colors.
+- Excessive animations.
+- Large rounded cards if the original uses subtle borders.
+- Unrelated dashboard sidebars.
+- Excessive whitespace that changes the original layout.
+- Generic medical illustrations when actual equipment photographs are appropriate.
+- Random design elements that cannot be found in the reference.
+
+The result should feel like the same website, with complete and consistently implemented pages.
+
+## 3. COLOR PALETTE EXTRACTION
+
+Create a centralized design-token file.
+
+Inspect the actual reference website and determine the colors used for:
+
+- Primary brand color.
+- Secondary brand color.
+- Main page background.
+- Header background.
+- Footer background.
+- Primary text.
+- Secondary text.
+- Muted text.
+- Primary button background.
+- Primary button text.
+- Secondary button background.
+- Link color.
+- Card background.
+- Border color.
+- Input background.
+- Input border.
+- Success messages.
+- Error messages.
+- Badges and status indicators.
+
+Use the original logo and live website as the source for the color palette.
+
+Do not assume that a popular healthcare blue palette matches the reference.
+
+Do not invent exact HEX values when the original colors cannot be inspected.
+
+Store the verified colors as CSS variables in a centralized theme file.
+
+Example structure:
+
+:root {
+  --color-primary: /* extract from reference */;
+  --color-secondary: /* extract from reference */;
+  --color-background: /* extract from reference */;
+  --color-surface: /* extract from reference */;
+  --color-text: /* extract from reference */;
+  --color-text-muted: /* extract from reference */;
+  --color-border: /* extract from reference */;
+  --color-button: /* extract from reference */;
+  --color-button-text: /* extract from reference */;
+  --color-success: /* accessible status color */;
+  --color-error: /* accessible status color */;
+}
+
+The values above are placeholders, not proposed original AffordMed colors.
+
+Keep all page components consistent with these tokens.
+
+## 4. TYPOGRAPHY SYSTEM
+
+Identify the original website's font family where possible.
+
+If the original font cannot be identified, select the closest suitable alternative.
+
+Typography requirements:
+
+- Match the original heading sizes and weights.
+- Match the body text's appearance and readability.
+- Preserve the reference's capitalization and text alignment.
+- Use consistent line heights.
+- Maintain clear heading hierarchy.
+- Match navigation and button typography.
+- Avoid mixing unrelated font families.
+- Load fonts efficiently.
+- Use responsive font sizes where necessary.
+
+Use centralized typography tokens for headings, paragraphs, navigation, buttons, labels, and product information.
+
+Do not use futuristic display fonts unless they are actually part of the original design.
+
+## 5. TECHNOLOGY STACK
+
+Use the following stack unless the existing project requires compatible alternatives:
+
+- React.
+- TypeScript.
+- Vite.
+- Tailwind CSS or the styling system already configured in the project.
+- React Router for multi-page navigation.
+- Lucide React for icons, where appropriate.
+- React Hook Form for forms.
+- Zod for form validation.
+- LocalStorage for basic demo persistence.
+- A reusable API service layer for future backend integration.
+
+Use semantic HTML and reusable React components.
+
+If the project already contains working components or dependencies, inspect them before replacing anything.
+
+Do not rebuild the entire project unnecessarily.
+
+Keep components modular and maintainable.
+
+## 6. GLOBAL WEBSITE HEADER
+
+Recreate the original website's header as closely as possible.
+
+Inspect and reproduce:
+
+- Original company logo.
+- Logo dimensions and proportions.
+- Header background.
+- Navigation alignment.
+- Navigation typography.
+- Navigation spacing.
+- Link colors.
+- Hover states.
+- Active navigation states.
+- Contact information or telephone number if displayed.
+- CTA buttons if present.
+- Header height.
+- Sticky or non-sticky behavior.
+- Dropdown menus, if present.
+- Mobile navigation behavior.
+
+Use the original navigation structure whenever it can be verified.
+
+Potential navigation destinations include:
+
+- Home.
+- Equipment Catalog.
+- Categories.
+- About Us.
+- Contact Us.
+
+Additional navigation items should only be included when supported by the reference or required for a functional added page.
+
+For mobile devices, implement an accessible menu button.
+
+The mobile menu must open and close correctly, close after navigation, support keyboard interaction, and prevent the menu from overflowing the viewport.
+
+Do not create an entirely new navigation layout if the original layout can be reproduced.
+
+## 7. HOMEPAGE — ROUTE /
+
+Build the homepage to match the original AffordMed homepage.
+
+### Section 1: Header
+
+Use the shared header component.
+
+### Section 2: Hero
+
+Reproduce the original hero section's layout and visual hierarchy.
+
+Include the appropriate:
+
+- Main heading.
+- Supporting paragraph.
+- Medical equipment or healthcare facility imagery.
+- Primary CTA.
+- Secondary CTA, if present.
+- Background treatment.
+- Content width.
+- Spacing.
+- Alignment.
+- Image proportions.
+
+Use the original headline when it is visible in the reference.
+
+The indexed reference content includes the headline:
+
+"Equipping Healthcare for a Better Tomorrow"
+
+Its supporting message describes original and refurbished medical equipment, quality, reliability, and affordability.
+
+Use this information to reproduce the corresponding section without adding unrelated marketing claims.
+
+Primary CTA: Explore Catalog.
+
+Secondary CTA: View Categories.
+
+Ensure both buttons navigate to their intended destinations.
+
+### Section 3: Trust and service benefits
+
+Recreate the original benefits section.
+
+The available reference content identifies three benefits:
+
+1. Quality.
+2. Original & Refurbished.
+3. Global Shipping.
+
+Present them using the same general layout, icon treatment, spacing, and typography as the reference.
+
+Explain the benefits using concise, professional copy.
+
+Do not fabricate certifications, guarantees, delivery timelines, or service commitments.
+
+### Section 4: Equipment categories
+
+Create a category section that matches the reference.
+
+Include these categories:
+
+- Imaging.
+- Patient Monitoring.
+- Surgical.
+- Respiratory.
+- Laboratory.
+
+Use category images or icons that match the reference style.
+
+Each category must be clickable and navigate to the relevant filtered catalog.
+
+If the reference uses category cards, reproduce their proportions, layout, and hover behavior.
+
+### Section 5: Featured equipment
+
+Reproduce the original featured equipment section.
+
+The available reference content identifies these products:
+
+1. GE Healthcare — Optima MR450w 1.5T.
+2. Philips — EPIQ Elite Ultrasound.
+3. Philips — IntelliVue MX800.
+4. Dräger — Polaris 600 Surgical Light.
+
+Represent original and refurbished equipment with clear condition labels.
+
+Each card should support:
+
+- Product image.
+- Brand.
+- Product name.
+- Condition label.
+- Appropriate supporting information.
+- Product details action.
+- Inquiry action, if consistent with the original design.
+
+Use real product photographs where they can be obtained legally and reliably.
+
+Do not fabricate technical specifications or medical certifications.
+
+### Section 6: Additional content
+
+Inspect the reference homepage and reproduce any additional sections that are actually present.
+
+Preserve the original section order.
+
+Do not add invented testimonials, fake customer logos, fabricated statistics, or unverified awards.
+
+### Section 7: Footer
+
+Recreate the original footer, including its verified:
+
+- Logo.
+- Company description.
+- Navigation links.
+- Contact information.
+- Address.
+- Telephone number.
+- Email address.
+- Legal links.
+- Copyright notice.
+
+Use the contact information visible on the reference website.
+
+Ensure all footer links navigate to valid pages.
+
+## 8. EQUIPMENT CATALOG — ROUTE /catalog
+
+Build a complete equipment catalog.
+
+The indexed reference identifies the page as Equipment Catalog and includes product search, category filtering, brand filtering, and condition filtering.
+
+Reproduce the reference page layout and controls.
+
+### Page header
+
+Include:
+- Page title.
+- Supporting description.
+- Breadcrumb navigation if present in the reference.
+
+### Search
+
+Implement a working equipment search field.
+
+Search across:
+- Product name.
+- Brand.
+- Model.
+- Category.
+
+The search should update results as the user types, with a clear empty state when no results match.
+
+### Category filter
+
+Support:
+- All.
+- Imaging.
+- Patient Monitoring.
+- Surgical.
+- Respiratory.
+- Laboratory.
+
+### Brand filter
+
+Support the brands shown in the reference catalog:
+
+- GE Healthcare.
+- Philips.
+- Dräger.
+- Siemens.
+- Medtronic.
+
+Only show products associated with the relevant brand in the product dataset.
+
+### Condition filter
+
+Support:
+- All.
+- Original.
+- Refurbished.
+
+### Sorting
+
+Implement sorting options appropriate for a medical equipment catalog.
+
+Examples:
+- Product name A–Z.
+- Product name Z–A.
+- Brand.
+- Recently added, when creation dates exist.
+
+Do not add price sorting unless prices are available in the dataset.
+
+### Product grid
+
+Use the original product-card design.
+
+Match:
+- Grid columns.
+- Card dimensions.
+- Image aspect ratio.
+- Border style.
+- Text alignment.
+- Badge placement.
+- Buttons.
+- Spacing.
+- Responsive behavior.
+
+Display a result count.
+
+Combine all active filters correctly.
+
+Add a Clear Filters action.
+
+The URL should support category filters, such as:
+
+/catalog?category=Imaging
+
+The filter state should remain consistent when the page is refreshed.
+
+### Empty state
+
+When no products match the current search or filters, display a clear message and a button to reset the filters.
+
+Do not leave a blank grid.
+
+## 9. CATEGORY PAGES
+
+Create category-specific routes.
+
+Recommended routes:
+
+/catalog/imaging
+/catalog/patient-monitoring
+/catalog/surgical
+/catalog/respiratory
+/catalog/laboratory
+
+Alternatively, implement a reusable category page with dynamic route parameters.
+
+Each category page should include:
+
+- Category title.
+- Short description.
+- Relevant category imagery.
+- Products from that category.
+- Shared catalog filters.
+- Product result count.
+- Breadcrumbs.
+- Empty states.
+- Responsive product grid.
+
+Do not duplicate the entire page implementation for every category.
+
+Reuse the same components and design tokens.
+
+## 10. PRODUCT DETAILS — ROUTE /product/:slug
+
+Create a reusable product details page.
+
+Every product card must navigate to its corresponding product page.
+
+### Product information
+
+Include available data for:
+
+- Product name.
+- Manufacturer.
+- Model.
+- Category.
+- Original or refurbished condition.
+- Product images.
+- Product overview.
+- Specifications.
+- Availability status, if known.
+- Warranty information, if verified.
+- Inquiry CTA.
+
+Do not invent missing technical specifications, prices, warranties, regulatory approvals, or stock availability.
+
+For unavailable fields, omit them or clearly indicate that the user should contact the company for confirmation.
+
+### Layout
+
+Match the original website's visual language.
+
+Use an appropriate product image gallery and information panel.
+
+If the original website uses a different layout, follow the original.
+
+### Functional actions
+
+Include:
+
+- Request a Quote.
+- Send an Inquiry.
+- Return to Catalog.
+
+If a contact or inquiry form is opened, prefill the product name and model.
+
+Maintain the selected product context throughout the inquiry process.
+
+## 11. ABOUT US — ROUTE /about
+
+Reproduce the reference About Us page.
+
+The available indexed page content uses the heading:
+
+"Empowering Healthcare Through Accessible Technology"
+
+The page describes AffordMed's work to provide reliable medical equipment at accessible price points.
+
+Build the page with the following sections, matching the reference wherever its layout is available:
+
+### Company introduction
+
+Explain the company's mission and its role in medical equipment procurement.
+
+Use verified company information.
+
+### Mission
+
+Present the mission in a visually consistent content section.
+
+### Company advantages
+
+The available reference content mentions:
+
+- Refurbishment and inspection processes.
+- OEM partnerships.
+- Post-sale support.
+- Global reach.
+- Warranty options.
+- Biomedical expertise.
+
+Only retain specific claims where they can be verified.
+
+### Leadership
+
+Reproduce leadership profiles only if they appear in the reference.
+
+Use verified names, positions, and profile information.
+
+Do not invent employee profiles or portraits.
+
+### Closing CTA
+
+Include an appropriate link to the equipment catalog or contact page if supported by the original page.
+
+Keep the entire page consistent with the shared typography, colors, header, and footer.
+
+## 12. CONTACT US — ROUTE /contact
+
+Reproduce the original contact page.
+
+Use the following contact information where still confirmed by the live reference:
+
+AffordMed
+B230, 2nd Main Road, AFOCHS, Sainikpuri
+Hyderabad, Telangana 500094, India
+
+Phone: +91 (40) 2711-7068
+
+Email: contact@affordmed.com
+
+Verify these details before final publication.
+
+### Contact layout
+
+Match the original page's structure.
+
+Include the appropriate combination of:
+- Contact details.
+- Telephone link.
+- Email link.
+- Address.
+- Contact form.
+- Map or location section, if present in the reference.
+
+### Contact form fields
+
+- Full name.
+- Work email.
+- Phone number.
+- Organization or hospital.
+- Inquiry subject.
+- Message.
+
+### Form behavior
+
+- Validate required fields.
+- Validate email formatting.
+- Display useful error messages.
+- Display a submission confirmation.
+- Prevent accidental duplicate submissions.
+- Preserve entered information if validation fails.
+- Support keyboard navigation.
+
+A frontend-only demonstration must not claim that an inquiry has been delivered to the company unless a working backend or email integration confirms it.
+
+## 13. REQUEST A QUOTE — ROUTE /request-quote
+
+Implement a dedicated equipment inquiry page as an additional functional feature.
+
+Match the original website's design system.
+
+### Form fields
+
+- Full name.
+- Hospital or organization name.
+- Business email.
+- Contact number.
+- Equipment category.
+- Manufacturer preference.
+- Equipment model.
+- Original or refurbished preference.
+- Quantity.
+- Delivery location.
+- Additional requirements.
+
+Allow the user to select an existing product when starting the inquiry from a product page.
+
+### Behavior
+
+- Validate all required fields.
+- Show field-level errors.
+- Preserve selected equipment.
+- Display a clear confirmation state.
+- Support submission through a configurable backend API.
+
+Do not create fake quote amounts or claim that a quotation has been generated when no backend exists.
+
+## 14. SERVICES AND SUPPORT — ROUTE /services
+
+Create this additional page only if the business needs a dedicated services section.
+
+Maintain the original AffordMed UI.
+
+Possible content categories include:
+
+- Medical equipment procurement.
+- Equipment installation.
+- Maintenance and technical support.
+- Refurbished equipment assessment.
+- Biomedical support.
+
+Use only services that the company actually provides and that can be verified.
+
+Do not introduce unsupported service guarantees or certifications.
+
+## 15. FAQ — ROUTE /faq
+
+Create a simple, accessible FAQ page as an optional additional feature.
+
+Suggested topics:
+
+- How can I inquire about a product?
+- How can I request a quotation?
+- What is the difference between original and refurbished equipment?
+- How can I confirm product availability?
+- How can I contact the company?
+- How can I obtain product specifications?
+
+Use an accordion interface only if it fits the site's design language.
+
+Do not promise delivery schedules, warranty coverage, payment terms, or return policies without verified information.
+
+## 16. PRIVACY POLICY — ROUTE /privacy-policy
+
+Create a structured privacy policy page.
+
+Use readable headings, paragraphs, and lists.
+
+Cover:
+- Information collected through forms.
+- How inquiries are processed.
+- Data storage.
+- Cookies and analytics, if used.
+- Third-party services, if used.
+- Contact information for privacy questions.
+
+Do not claim legal compliance without verification.
+
+Make the page easy to read on desktop and mobile.
+
+## 17. TERMS OF USE — ROUTE /terms-of-use
+
+Reproduce the existing terms page if its original content and layout can be accessed.
+
+Preserve the website's shared design.
+
+Use accurate legal content.
+
+Do not replace actual legal terms with invented warranty, refund, or liability conditions.
+
+## 18. SEARCH, NAVIGATION, AND ROUTING
+
+All pages must use a consistent routing system.
+
+Implement:
+- Working internal links.
+- Correct browser back and forward behavior.
+- Active navigation states.
+- Breadcrumb navigation where appropriate.
+- Search query persistence.
+- Filter query parameters.
+- Valid product routes.
+- Useful loading states.
+- Empty states.
+- A custom 404 page.
+
+Never leave buttons that look functional but do nothing.
+
+If a feature is not connected to a backend, provide an honest demonstration state or disable the action with a clear explanation.
+
+## 19. PRODUCT DATA MODEL
+
+Create a centralized product dataset.
+
+Each product should support the following structure:
+
+{
+  id: string,
+  slug: string,
+  name: string,
+  brand: string,
+  model: string,
+  category: string,
+  condition: "Original" | "Refurbished",
+  images: string[],
+  description: string,
+  specifications: Record<string, string>,
+  availability: string | null,
+  warranty: string | null
+}
+
+Use TypeScript interfaces or types.
+
+Populate the initial dataset with the products identified on the reference website.
+
+Only use verified specifications and product details.
+
+If a detail is unknown, leave it empty rather than inventing it.
+
+Keep the dataset separate from the UI components so that a backend API can replace the mock data later.
+
+## 20. REUSABLE COMPONENTS
+
+Build reusable components for:
+
+- SiteHeader.
+- SiteFooter.
+- MobileNavigation.
+- Breadcrumbs.
+- PageHeading.
+- PrimaryButton.
+- SecondaryButton.
+- SearchInput.
+- CategoryCard.
+- ProductCard.
+- ProductGrid.
+- ProductFilters.
+- ConditionBadge.
+- BrandLabel.
+- ContactForm.
+- QuoteRequestForm.
+- FormField.
+- EmptyState.
+- LoadingState.
+- ErrorState.
+- ConfirmationMessage.
+- NotFoundPage.
+
+Create shared components instead of repeating the same markup across multiple pages.
+
+Every component must use the centralized design tokens.
+
+## 21. RESPONSIVE DESIGN
+
+The website must work correctly on:
+
+- Desktop computers.
+- Laptops.
+- Tablets.
+- Mobile phones.
+
+Requirements:
+
+- No horizontal overflow.
+- Correct text wrapping.
+- Responsive images.
+- Accessible navigation.
+- Appropriate grid columns.
+- Readable form controls.
+- Consistent spacing.
+- Touch-friendly buttons.
+- Mobile-friendly filters.
+- No overlapping cards.
+- No clipped headings.
+- No hidden form actions.
+
+Match the original desktop layout before making mobile-specific adjustments.
+
+Do not shrink the desktop design indiscriminately. Reorganize content based on the actual reference layout and the available screen width.
+
+## 22. IMAGES AND ASSETS
+
+Use actual website assets where legally and technically accessible.
+
+Prioritize:
+- Original logo.
+- Medical equipment images.
+- Product photography.
+- Category imagery.
+- Company images.
+
+Do not stretch images or use arbitrary stock photos for specific equipment models.
+
+Do not use broken image URLs.
+
+If original images cannot be retrieved, use suitable replacement images with accurate alternative text.
+
+Keep images in a centralized asset directory.
+
+Use appropriate image dimensions and modern formats when possible.
+
+Lazy-load below-the-fold imagery.
+
+## 23. ANIMATION AND INTERACTION
+
+Keep animations subtle and consistent with the reference.
+
+Possible interactions:
+- Navigation hover states.
+- Button hover and focus states.
+- Dropdown transitions.
+- Product image hover effects.
+- Filter transitions.
+- Form validation feedback.
+- Loading indicators.
+
+Do not add large parallax effects, 3D objects, animated particles, or excessive motion unless these effects exist in the reference.
+
+Respect reduced-motion preferences.
+
+Prioritize usability and visual fidelity over decorative animation.
+
+## 24. ACCESSIBILITY
+
+Implement:
+- Semantic headings.
+- Accessible labels.
+- Descriptive alternative text.
+- Keyboard-accessible menus.
+- Visible focus states.
+- Sufficient text contrast.
+- Accessible form errors.
+- Proper button semantics.
+- Appropriate ARIA attributes where needed.
+
+Do not rely on color alone to distinguish original and refurbished equipment.
+
+## 25. SEO
+
+Implement appropriate metadata for every page.
+
+Include:
+- Unique page titles.
+- Meta descriptions.
+- Canonical URLs where appropriate.
+- Open Graph metadata.
+- Descriptive image alt text.
+- Semantic headings.
+- Sitemap configuration.
+- Robots configuration.
+- Appropriate product structured data only when the required information is available.
+
+Avoid duplicate metadata across all pages.
+
+Do not fabricate reviews, prices, availability, or ratings in structured data.
+
+## 26. PERFORMANCE
+
+Optimize the website for fast loading.
+
+Requirements:
+- Avoid unnecessary dependencies.
+- Lazy-load below-the-fold images.
+- Minimize layout shifts.
+- Avoid unnecessary re-renders.
+- Use responsive images.
+- Keep bundle sizes reasonable.
+- Display loading feedback when needed.
+- Handle unavailable assets gracefully.
+
+Do not sacrifice visual fidelity to achieve superficial performance scores.
+
+## 27. BACKEND READINESS
+
+Keep the frontend ready for future integration with a real backend.
+
+Create service functions for:
+- Fetching products.
+- Fetching product details.
+- Searching products.
+- Submitting contact inquiries.
+- Submitting quote requests.
+
+For the frontend demo, use local mock data and clearly defined service interfaces.
+
+Do not hardcode secret API keys.
+
+Do not claim that forms, email notifications, inventory, or customer records are connected to a real system unless they are implemented.
+
+If a backend is added, use proper server-side validation and secure storage.
+
+## 28. RECOMMENDED PROJECT STRUCTURE
+
+Use a clean, modular structure similar to:
+
+src/
+  assets/
+  components/
+    layout/
+    navigation/
+    products/
+    forms/
+    common/
+  pages/
+    HomePage.tsx
+    CatalogPage.tsx
+    CategoryPage.tsx
+    ProductDetailsPage.tsx
+    AboutPage.tsx
+    ContactPage.tsx
+    RequestQuotePage.tsx
+    ServicesPage.tsx
+    FAQPage.tsx
+    PrivacyPolicyPage.tsx
+    TermsPage.tsx
+    NotFoundPage.tsx
+  data/
+    products.ts
+    categories.ts
+  hooks/
+  services/
+    productService.ts
+    inquiryService.ts
+  styles/
+    theme.css
+    global.css
+  types/
+    product.ts
+  App.tsx
+  main.tsx
+
+Adapt the structure to the actual project when necessary.
+
+Do not create empty files for features that are not implemented.
+
+## 29. QUALITY ASSURANCE
+
+After implementation, verify every page and interaction.
+
+Check:
+
+- Header matches the reference.
+- Footer matches the reference.
+- Colors match the observed palette.
+- Typography matches the reference.
+- Images have correct proportions.
+- Product cards are visually consistent.
+- Navigation works.
+- Category filters work.
+- Brand filters work.
+- Condition filters work.
+- Search works.
+- Multiple filters combine correctly.
+- Clear Filters works.
+- Product details load correctly.
+- Quote forms validate correctly.
+- Contact forms validate correctly.
+- Empty states work.
+- Mobile navigation works.
+- No internal links are broken.
+- No images are broken.
+- No console errors remain.
+- No placeholder buttons remain.
+- No horizontal overflow occurs.
+
+Test the homepage, catalog, product details, About Us, Contact Us, and Request a Quote pages at desktop and mobile widths.
+
+Compare screenshots against the reference website and fix the largest visual differences first.
+
+## 30. FINAL ACCEPTANCE CRITERIA
+
+The project is complete only when:
+
+1. Every required page exists.
+2. The original visual design has been followed closely.
+3. The actual color palette has been extracted or documented as unverified where inspection was impossible.
+4. The header, navigation, typography, cards, and footer are consistent.
+5. Search and filtering are functional.
+6. Product cards navigate to valid product details pages.
+7. Forms validate input and display clear results.
+8. Responsive layouts work correctly.
+9. The website contains no broken internal links or obvious placeholder content.
+10. The code is modular, readable, and ready for further development.
+
+## FINAL INSTRUCTION
+
+Start by inspecting the reference website and identifying the design system.
+
+Then implement the shared layout and homepage.
+
+Next, implement the catalog, category pages, product details, About Us, Contact Us, and the remaining required pages.
+
+Do not stop after generating the homepage.
+
+Do not return only a design description, wireframe, or static mockup.
+
+Build the actual multi-page application, run it, test it, and correct any visual or functional problems.
+
+The final result should be a polished, responsive, functional recreation of the AffordMed website, preserving its original design identity while improving code quality and implementation completeness.
