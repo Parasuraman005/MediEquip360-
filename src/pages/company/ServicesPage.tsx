@@ -1,6 +1,6 @@
 import { ShieldCheck, Cpu, Globe, Wrench, FileCheck, Award, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useSEO } from '../hooks/useSEO';
+import { useSEO } from '../../hooks/useSEO';
 
 export function ServicesPage() {
   useSEO({
@@ -44,12 +44,9 @@ export function ServicesPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#0f3b6c] to-[#0284c7] text-white p-8 sm:p-12 rounded-3xl shadow-lg text-center space-y-4">
-        <span className="text-xs font-bold uppercase tracking-widest bg-white/20 px-3.5 py-1.5 rounded-full inline-block">
-          Demo Platform Services
-        </span>
-        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Services &amp; Capabilities</h1>
-        <p className="text-slate-200 text-sm max-w-xl mx-auto">
+      <div className="bg-gradient-to-r from-[#0f3b6c] to-[#0284c7] text-white py-4 px-6 rounded-2xl shadow-sm text-center space-y-1">
+        <h1 className="text-lg sm:text-xl font-bold tracking-tight">Services &amp; Capabilities</h1>
+        <p className="text-slate-200 text-xs max-w-xl mx-auto">
           MediEquip360 provides comprehensive demonstration workflows for exploring medical devices and managing mock procurement inquiries.
         </p>
       </div>

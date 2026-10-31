@@ -35,9 +35,6 @@ class AnalyticsService {
       ...event.params,
     };
 
-    // Log to console for demonstration / debugging
-    console.log('[Analytics Event]:', payload);
-
     // Call window.gtag or window.dataLayer if present
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', event.eventName, payload);

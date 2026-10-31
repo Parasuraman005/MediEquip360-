@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Stethoscope, ArrowLeft, Grid } from 'lucide-react';
-import { useSEO } from '../hooks/useSEO';
+import { useSEO } from '../../hooks/useSEO';
 
 export function NotFoundPage() {
   useSEO({

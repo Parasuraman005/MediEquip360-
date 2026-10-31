@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Core Static Pages -->
+  <!-- Core Public Static Pages -->
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/</loc>
+    <loc>https://mediequip360.com/</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/catalog</loc>
+    <loc>https://mediequip360.com/catalog</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/services</loc>
+    <loc>https://mediequip360.com/services</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/request-quote</loc>
+    <loc>https://mediequip360.com/request-quote</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/support-ticket</loc>
+    <loc>https://mediequip360.com/support-ticket</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/about</loc>
+    <loc>https://mediequip360.com/about</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/contact</loc>
+    <loc>https://mediequip360.com/contact</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/faq</loc>
+    <loc>https://mediequip360.com/faq</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/privacy-policy</loc>
+    <loc>https://mediequip360.com/privacy-policy</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/terms-of-use</loc>
+    <loc>https://mediequip360.com/terms-of-use</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -64,31 +64,31 @@
 
   <!-- Diagnostic Imaging Products -->
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/sonovista-portable-ultrasound-sv-pu100</loc>
+    <loc>https://mediequip360.com/product/sonovista-portable-ultrasound-sv-pu100</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/optima-scan-ct-16-scanner</loc>
+    <loc>https://mediequip360.com/product/optima-scan-ct-16-scanner</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/radview-digital-xray-system</loc>
+    <loc>https://mediequip360.com/product/radview-digital-xray-system</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/echocare-cardiac-ultrasound-system</loc>
+    <loc>https://mediequip360.com/product/echocare-cardiac-ultrasound-system</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/mag-pulse-1.5t-mri-scanner</loc>
+    <loc>https://mediequip360.com/product/mag-pulse-1.5t-mri-scanner</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -96,31 +96,31 @@
 
   <!-- Patient Monitoring Products -->
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/cardiotrack-patient-monitor-ct-m800</loc>
+    <loc>https://mediequip360.com/product/cardiotrack-patient-monitor-ct-m800</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/vitallink-central-monitoring-station</loc>
+    <loc>https://mediequip360.com/product/vitallink-central-monitoring-station</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/pulsecheck-pro-handheld-pulse-oximeter</loc>
+    <loc>https://mediequip360.com/product/pulsecheck-pro-handheld-pulse-oximeter</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/teleheart-ambulatory-ecg-monitor</loc>
+    <loc>https://mediequip360.com/product/teleheart-ambulatory-ecg-monitor</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/neuropulse-bis-depth-of-anesthesia-monitor</loc>
+    <loc>https://mediequip360.com/product/neuropulse-bis-depth-of-anesthesia-monitor</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -128,31 +128,31 @@
 
   <!-- Surgical Equipment Products -->
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/surgibeam-led-operating-light-sb-led200</loc>
+    <loc>https://mediequip360.com/product/surgibeam-led-operating-light-sb-led200</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/electrosurg-300-hf-generator</loc>
+    <loc>https://mediequip360.com/product/electrosurg-300-hf-generator</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/orthopower-surgical-bone-drill-system</loc>
+    <loc>https://mediequip360.com/product/orthopower-surgical-bone-drill-system</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/lapaview-full-hd-laparoscopic-camera</loc>
+    <loc>https://mediequip360.com/product/lapaview-full-hd-laparoscopic-camera</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/surgitable-hydraulic-operating-table</loc>
+    <loc>https://mediequip360.com/product/surgitable-hydraulic-operating-table</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -160,31 +160,31 @@
 
   <!-- Respiratory Care Products -->
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/aeroflow-respiratory-support-unit-af-rs250</loc>
+    <loc>https://mediequip360.com/product/aeroflow-respiratory-support-unit-af-rs250</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/medflow-advanced-anesthesia-machine</loc>
+    <loc>https://mediequip360.com/product/medflow-advanced-anesthesia-machine</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/oxystream-10l-oxygen-concentrator</loc>
+    <loc>https://mediequip360.com/product/oxystream-10l-oxygen-concentrator</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/respicare-auto-cpap-therapy-device</loc>
+    <loc>https://mediequip360.com/product/respicare-auto-cpap-therapy-device</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/pneumo-neb-clinical-compressor-nebulizer</loc>
+    <loc>https://mediequip360.com/product/pneumo-neb-clinical-compressor-nebulizer</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -192,31 +192,31 @@
 
   <!-- Laboratory Equipment Products -->
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/labsphere-clinical-centrifuge-ls-c400</loc>
+    <loc>https://mediequip360.com/product/labsphere-clinical-centrifuge-ls-c400</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/biochemsure-automated-chemistry-analyzer</loc>
+    <loc>https://mediequip360.com/product/biochemsure-automated-chemistry-analyzer</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/hemaset-3-part-hematology-analyzer</loc>
+    <loc>https://mediequip360.com/product/hemaset-3-part-hematology-analyzer</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/opticview-binocular-clinical-microscope</loc>
+    <loc>https://mediequip360.com/product/opticview-binocular-clinical-microscope</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/thermoline-microbiological-lab-incubator</loc>
+    <loc>https://mediequip360.com/product/thermoline-microbiological-lab-incubator</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -224,31 +224,31 @@
 
   <!-- Hospital Furniture Products -->
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/medilift-examination-couch-ml-ec120</loc>
+    <loc>https://mediequip360.com/product/medilift-examination-couch-ml-ec120</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/comfortcare-5-function-icu-bed</loc>
+    <loc>https://mediequip360.com/product/comfortcare-5-function-icu-bed</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/medi-cart-emergency-crash-trolley</loc>
+    <loc>https://mediequip360.com/product/medi-cart-emergency-crash-trolley</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/care-side-abs-bedside-cabinet</loc>
+    <loc>https://mediequip360.com/product/care-side-abs-bedside-cabinet</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/flex-table-adjustable-overbed-table</loc>
+    <loc>https://mediequip360.com/product/flex-table-adjustable-overbed-table</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -256,31 +256,31 @@
 
   <!-- Emergency Care Products -->
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/rapidaid-emergency-defibrillator-ra-df200</loc>
+    <loc>https://mediequip360.com/product/rapidaid-emergency-defibrillator-ra-df200</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/lifeguard-aed-public-access-defibrillator</loc>
+    <loc>https://mediequip360.com/product/lifeguard-aed-public-access-defibrillator</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/trauma-vent-portable-transport-ventilator</loc>
+    <loc>https://mediequip360.com/product/trauma-vent-portable-transport-ventilator</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/aspirator-pro-portable-surgical-suction</loc>
+    <loc>https://mediequip360.com/product/aspirator-pro-portable-surgical-suction</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/spine-safe-emergency-spinal-board</loc>
+    <loc>https://mediequip360.com/product/spine-safe-emergency-spinal-board</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -288,31 +288,31 @@
 
   <!-- Rehabilitation Equipment Products -->
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/fleximove-rehabilitation-trainer-fm-rt300</loc>
+    <loc>https://mediequip360.com/product/fleximove-rehabilitation-trainer-fm-rt300</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/gait-master-adjustable-parallel-bars</loc>
+    <loc>https://mediequip360.com/product/gait-master-adjustable-parallel-bars</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/pain-relief-pro-tens-ems-device</loc>
+    <loc>https://mediequip360.com/product/pain-relief-pro-tens-ems-device</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/posture-correct-motorized-tilt-table</loc>
+    <loc>https://mediequip360.com/product/posture-correct-motorized-tilt-table</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ais-pre-7zduyzxga6nddgbvzpyz6a-13777060248.asia-east1.run.app/product/kinesio-shoulder-rehab-wheel</loc>
+    <loc>https://mediequip360.com/product/kinesio-shoulder-rehab-wheel</loc>
     <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown, HelpCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useSEO } from '../hooks/useSEO';
+import { useSEO } from '../../hooks/useSEO';
 
 export function FAQPage() {
   useSEO({
@@ -40,16 +40,6 @@ export function FAQPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
-      <div className="bg-gradient-to-r from-[#0f3b6c] to-[#0284c7] text-white p-8 sm:p-12 rounded-3xl shadow-lg text-center space-y-4">
-        <span className="text-xs font-bold uppercase tracking-widest bg-white/20 px-3.5 py-1.5 rounded-full inline-block">
-          Help Center
-        </span>
-        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Frequently Asked Questions</h1>
-        <p className="text-slate-200 text-sm max-w-xl mx-auto">
-          Find answers to common questions about browsing medical equipment, requesting quotations, and demo platform features.
-        </p>
-      </div>
-
       <div className="space-y-4">
         {faqs.map((faq, idx) => {
           const isOpen = openIndex === idx;

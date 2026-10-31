@@ -5,27 +5,34 @@
 
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { SiteHeader } from './components/layout/SiteHeader';
-import { SiteFooter } from './components/layout/SiteFooter';
-import { BackToTop } from './components/common/BackToTop';
-import { ToastProvider } from './components/common/Toast';
-import { ErrorBoundary } from './components/common/ErrorBoundary';
-import { captureUTMParameters } from './utils/utm';
-import { analytics } from './utils/analytics';
+import {
+  SiteHeader,
+  SiteFooter,
+  BackToTop,
+  ToastProvider,
+  ErrorBoundary,
+  OfflineDetector,
+} from './components';
+import { OfflineProvider } from './hooks';
+import { captureUTMParameters, analytics } from './utils';
 
-import { HomePage } from './pages/HomePage';
-import { CatalogPage } from './pages/CatalogPage';
-import { ProductDetailsPage } from './pages/ProductDetailsPage';
-import { AboutPage } from './pages/AboutPage';
-import { ContactPage } from './pages/ContactPage';
-import { RequestQuotePage } from './pages/RequestQuotePage';
-import { ServicesPage } from './pages/ServicesPage';
-import { SupportTicketPage } from './pages/SupportTicketPage';
-import { FAQPage } from './pages/FAQPage';
-import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
-import { TermsPage } from './pages/TermsPage';
-import { NotFoundPage } from './pages/NotFoundPage';
-import { ServerErrorPage } from './pages/ServerErrorPage';
+import {
+  HomePage,
+  CatalogPage,
+  ProductDetailsPage,
+  AboutPage,
+  ContactPage,
+  RequestQuotePage,
+  ServicesPage,
+  SupportTicketPage,
+  FAQPage,
+  PrivacyPolicyPage,
+  TermsPage,
+  NotFoundPage,
+  ServerErrorPage,
+  GatewayTimeoutPage,
+  OfflinePage,
+} from './pages';
 
 function RouteObserver() {
   const { pathname } = useLocation();
@@ -46,33 +53,39 @@ export default function App() {
 
   return (
     <ErrorBoundary>
-      <ToastProvider>
-        <BrowserRouter>
-          <RouteObserver />
-          <div className="min-h-screen flex flex-col bg-[#f8fafc] text-[#0f172a] pt-[116px] sm:pt-[120px]">
-            <SiteHeader />
-            <main className="flex-1">
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/catalog" element={<CatalogPage />} />
-                <Route path="/product/:slug" element={<ProductDetailsPage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/request-quote" element={<RequestQuotePage />} />
-                <Route path="/services" element={<ServicesPage />} />
-                <Route path="/support-ticket" element={<SupportTicketPage />} />
-                <Route path="/faq" element={<FAQPage />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-                <Route path="/terms-of-use" element={<TermsPage />} />
-                <Route path="/500" element={<ServerErrorPage />} />
-                <Route path="*" element={<NotFoundPage />} />
-              </Routes>
-            </main>
-            <SiteFooter />
-            <BackToTop />
-          </div>
-        </BrowserRouter>
-      </ToastProvider>
+      <OfflineProvider>
+        <ToastProvider>
+          <BrowserRouter>
+            <RouteObserver />
+            <OfflineDetector>
+              <div className="min-h-screen flex flex-col bg-[#f8fafc] text-[#0f3b6c] pt-[116px] sm:pt-[120px]">
+                <SiteHeader />
+                <main className="flex-1">
+                  <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/catalog" element={<CatalogPage />} />
+                    <Route path="/product/:slug" element={<ProductDetailsPage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/request-quote" element={<RequestQuotePage />} />
+                    <Route path="/services" element={<ServicesPage />} />
+                    <Route path="/support-ticket" element={<SupportTicketPage />} />
+                    <Route path="/faq" element={<FAQPage />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                    <Route path="/terms-of-use" element={<TermsPage />} />
+                    <Route path="/offline" element={<OfflinePage />} />
+                    <Route path="/500" element={<ServerErrorPage />} />
+                    <Route path="/504" element={<GatewayTimeoutPage />} />
+                    <Route path="*" element={<NotFoundPage />} />
+                  </Routes>
+                </main>
+                <SiteFooter />
+                <BackToTop />
+              </div>
+            </OfflineDetector>
+          </BrowserRouter>
+        </ToastProvider>
+      </OfflineProvider>
     </ErrorBoundary>
   );
 }

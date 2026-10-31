@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { products } from '../data/products';
-import { ProductFilters } from '../components/products/ProductFilters';
-import { ProductGrid } from '../components/products/ProductGrid';
-import { SkeletonGrid } from '../components/common/Skeleton';
+import { products } from '../../data/products';
+import { ProductFilters } from '../../components/products/ProductFilters';
+import { ProductGrid } from '../../components/products/ProductGrid';
+import { SkeletonGrid } from '../../components/common/Skeleton';
 import { Stethoscope, Filter, X } from 'lucide-react';
-import { useSEO } from '../hooks/useSEO';
+import { useSEO } from '../../hooks/useSEO';
 
 export function CatalogPage() {
   useSEO({
@@ -78,19 +78,13 @@ export function CatalogPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       {/* Page Header */}
-      <div className="bg-gradient-to-r from-[#0f3b6c] to-[#0284c7] text-white p-8 sm:p-12 rounded-3xl shadow-lg relative overflow-hidden">
-        <div className="absolute right-0 bottom-0 opacity-10 translate-x-8 translate-y-8">
-          <Stethoscope className="w-64 h-64 text-white" />
-        </div>
-        <div className="relative z-10 space-y-3 max-w-2xl">
-          <div className="text-xs font-bold uppercase tracking-widest bg-white/20 px-3 py-1.5 rounded-full inline-block">
-            MediEquip360 Catalog
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+      <div className="bg-gradient-to-r from-[#0f3b6c] to-[#0284c7] text-white py-4 px-6 rounded-2xl shadow-sm relative overflow-hidden">
+        <div className="relative z-10 space-y-1 max-w-3xl">
+          <h1 className="text-lg sm:text-xl font-bold tracking-tight">
             Medical Equipment Catalog
           </h1>
-          <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
-            Explore our comprehensive demonstration inventory featuring diagnostic imaging, patient monitoring, surgical equipment, respiratory care, and laboratory solutions.
+          <p className="text-slate-200 text-xs leading-relaxed">
+            Explore diagnostic imaging, patient monitoring, surgical equipment, respiratory care, and laboratory solutions.
           </p>
         </div>
       </div>

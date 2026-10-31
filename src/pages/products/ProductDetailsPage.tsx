@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { products } from '../data/products';
+import { products } from '../../data/products';
 import { ShieldCheck, ArrowLeft, ArrowRight, Phone, Mail, FileText, Check, AlertCircle, Loader2 } from 'lucide-react';
-import { useSEO } from '../hooks/useSEO';
-import { useToast } from '../components/common/Toast';
-import { getStoredUTMParameters } from '../utils/utm';
-import { analytics } from '../utils/analytics';
+import { useSEO } from '../../hooks/useSEO';
+import { useToast } from '../../components/common/Toast';
+import { getStoredUTMParameters } from '../../utils/utm';
+import { analytics } from '../../utils/analytics';
 
 export function ProductDetailsPage() {
   const { slug } = useParams<{ slug: string }>();

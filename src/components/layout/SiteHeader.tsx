@@ -123,9 +123,6 @@ export function SiteHeader() {
             <NavLink to="/about" className={navLinkClass}>
               About Us
             </NavLink>
-            <NavLink to="/faq" className={navLinkClass}>
-              FAQ
-            </NavLink>
             <NavLink to="/contact" className={navLinkClass}>
               Contact Us
             </NavLink>
@@ -232,13 +229,6 @@ export function SiteHeader() {
             onClick={() => setMobileMenuOpen(false)}
           >
             About Us
-          </Link>
-          <Link
-            to="/faq"
-            className="block py-2 text-sm sm:text-base font-medium text-slate-800 hover:text-[#0f3b6c]"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            FAQ
           </Link>
           <Link
             to="/contact"

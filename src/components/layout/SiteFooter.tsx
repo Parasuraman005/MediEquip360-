@@ -101,7 +101,7 @@ export function SiteFooter() {
           <div>
             © {new Date().getFullYear()} MediEquip360 Demonstration Platform. All rights reserved. (Demo Company)
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <Link to="/privacy-policy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
             <Link to="/terms-of-use" className="hover:text-slate-300 transition-colors">Terms of Use</Link>
             <Link to="/faq" className="hover:text-slate-300 transition-colors">FAQ</Link>

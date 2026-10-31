@@ -1,4 +1,4 @@
-import { useSEO } from '../hooks/useSEO';
+import { useSEO } from '../../hooks/useSEO';
 
 export function TermsPage() {
   useSEO({

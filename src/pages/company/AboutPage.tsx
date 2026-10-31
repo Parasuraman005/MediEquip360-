@@ -1,6 +1,6 @@
 import { ShieldCheck, Award, Globe, CheckCircle2, Stethoscope } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useSEO } from '../hooks/useSEO';
+import { useSEO } from '../../hooks/useSEO';
 
 export function AboutPage() {
   useSEO({
@@ -11,21 +11,13 @@ export function AboutPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
       {/* Hero */}
-      <div className="bg-gradient-to-r from-[#0f3b6c] to-[#0284c7] text-white p-8 sm:p-16 rounded-3xl shadow-xl relative overflow-hidden">
-        <div className="absolute right-0 bottom-0 opacity-10">
-          <Stethoscope className="w-80 h-80 text-white" />
-        </div>
-        <div className="max-w-3xl relative z-10 space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest bg-white/20 px-3.5 py-1.5 rounded-full inline-block">
-            About MediEquip360
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-            Making Equipment Discovery Simpler
-          </h1>
-          <p className="text-slate-200 text-base sm:text-lg leading-relaxed">
-            MediEquip360 is a fictional demonstration platform designed to showcase how healthcare providers can explore medical equipment listings and submit procurement inquiries through a single intuitive interface.
-          </p>
-        </div>
+      <div className="bg-gradient-to-r from-[#0f3b6c] to-[#0284c7] text-white py-4 px-6 rounded-2xl shadow-sm relative overflow-hidden space-y-1">
+        <h1 className="text-lg sm:text-xl font-bold tracking-tight">
+          About MediEquip360 — Making Equipment Discovery Simpler
+        </h1>
+        <p className="text-slate-200 text-xs leading-relaxed">
+          MediEquip360 is a fictional demonstration platform designed to showcase how healthcare providers can explore medical equipment listings and submit procurement inquiries through a single intuitive interface.
+        </p>
       </div>
 
       {/* Mission & Vision */}

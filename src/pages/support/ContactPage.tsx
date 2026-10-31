@@ -1,9 +1,19 @@
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, Loader2 } from 'lucide-react';
-import { useSEO } from '../hooks/useSEO';
-import { useToast } from '../components/common/Toast';
-import { getStoredUTMParameters } from '../utils/utm';
-import { analytics } from '../utils/analytics';
+import { useSEO } from '../../hooks/useSEO';
+import { useToast } from '../../components/common/Toast';
+import { useOffline, useFormDraft } from '../../hooks/useOffline';
+import { getStoredUTMParameters } from '../../utils/utm';
+import { analytics } from '../../utils/analytics';
+
+const initialContactForm = {
+  fullName: '',
+  email: '',
+  phone: '',
+  organization: '',
+  subject: 'General Inquiry',
+  message: '',
+};
 
 export function ContactPage() {
   useSEO({
@@ -13,21 +23,20 @@ export function ContactPage() {
   });
 
   const { showToast } = useToast();
+  const { isOnline } = useOffline();
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    organization: '',
-    subject: 'General Inquiry',
-    message: '',
-  });
+  const [formData, setFormData, clearDraft] = useFormDraft('contact_form', initialContactForm);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isOnline) {
+      showToast('error', 'Offline Mode', 'Internet connection is unavailable. Your message has been saved as a draft.');
+      return;
+    }
+
     const newErrors: Record<string, string> = {};
 
     if (!formData.fullName.trim()) newErrors.fullName = 'Full Name is required';
@@ -49,6 +58,7 @@ export function ContactPage() {
       const utm = getStoredUTMParameters();
       setIsSubmitting(false);
       setSubmitted(true);
+      clearDraft();
 
       showToast('success', 'Inquiry Sent', 'Your message has been received.');
       analytics.trackContactFormSubmit(formData.subject);
@@ -61,13 +71,10 @@ export function ContactPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#0f3b6c] to-[#0284c7] text-white p-8 sm:p-12 rounded-3xl shadow-lg text-center space-y-4">
-        <span className="text-xs font-bold uppercase tracking-widest bg-white/20 px-3.5 py-1.5 rounded-full inline-block">
-          Demo Support
-        </span>
-        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Contact MediEquip360</h1>
-        <p className="text-slate-200 text-sm sm:text-base max-w-2xl mx-auto">
-          Have questions about our demonstration platform, mock equipment catalog, or quotation inquiry workflows? Get in touch with our demo team.
+      <div className="bg-gradient-to-r from-[#0f3b6c] to-[#0284c7] text-white py-4 px-6 rounded-2xl shadow-sm text-center space-y-1">
+        <h1 className="text-lg sm:text-xl font-bold tracking-tight">Contact MediEquip360</h1>
+        <p className="text-slate-200 text-xs max-w-2xl mx-auto">
+          Have questions about our demonstration platform, mock equipment catalog, or quotation inquiry workflows? Get in touch with our team.
         </p>
       </div>
 

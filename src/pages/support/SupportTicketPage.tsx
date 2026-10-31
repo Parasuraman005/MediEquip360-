@@ -1,15 +1,35 @@
 import { useState, useRef } from 'react';
 import { AlertCircle, CheckCircle2, Send, RotateCcw, Paperclip, X, FileText, ShieldAlert, Loader2 } from 'lucide-react';
-import { useSEO } from '../hooks/useSEO';
-import { useToast } from '../components/common/Toast';
-import { getStoredUTMParameters } from '../utils/utm';
-import { analytics } from '../utils/analytics';
+import { useSEO } from '../../hooks/useSEO';
+import { useToast } from '../../components/common/Toast';
+import { useOffline, useFormDraft } from '../../hooks/useOffline';
+import { getStoredUTMParameters } from '../../utils/utm';
+import { analytics } from '../../utils/analytics';
 
 interface AttachmentFile {
   name: string;
   size: number;
   type: string;
 }
+
+const initialSupportForm = {
+  fullName: '',
+  email: '',
+  phone: '',
+  organization: '',
+  orderId: '',
+  productName: '',
+  modelNumber: '',
+  serialNumber: '',
+  purchaseDate: '',
+  warrantyStatus: 'Under Warranty',
+  complaintCategory: 'Equipment Malfunction',
+  complaintSubject: '',
+  description: '',
+  problemStartDate: '',
+  frequency: 'Occasionally',
+  impact: 'Major Issue',
+};
 
 export function SupportTicketPage() {
   useSEO({
@@ -19,6 +39,7 @@ export function SupportTicketPage() {
   });
 
   const { showToast } = useToast();
+  const { isOnline } = useOffline();
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [complaintRef, setComplaintRef] = useState('');
@@ -26,27 +47,7 @@ export function SupportTicketPage() {
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const [formData, setFormData] = useState({
-    // Section A
-    fullName: '',
-    email: '',
-    phone: '',
-    organization: '',
-    // Section B
-    orderId: '',
-    productName: '',
-    modelNumber: '',
-    serialNumber: '',
-    purchaseDate: '',
-    warrantyStatus: 'Under Warranty',
-    // Section C
-    complaintCategory: 'Equipment Malfunction',
-    complaintSubject: '',
-    description: '',
-    problemStartDate: '',
-    frequency: 'Occasionally',
-    impact: 'Major Issue',
-  });
+  const [formData, setFormData, clearDraft] = useFormDraft('support_ticket', initialSupportForm);
 
   const [attachments, setAttachments] = useState<AttachmentFile[]>([]);
 
@@ -105,24 +106,7 @@ export function SupportTicketPage() {
   };
 
   const handleClear = () => {
-    setFormData({
-      fullName: '',
-      email: '',
-      phone: '',
-      organization: '',
-      orderId: '',
-      productName: '',
-      modelNumber: '',
-      serialNumber: '',
-      purchaseDate: '',
-      warrantyStatus: 'Under Warranty',
-      complaintCategory: 'Equipment Malfunction',
-      complaintSubject: '',
-      description: '',
-      problemStartDate: '',
-      frequency: 'Occasionally',
-      impact: 'Major Issue',
-    });
+    clearDraft();
     setAttachments([]);
     setErrorMsg('');
     showToast('info', 'Form Cleared', 'Complaint form has been reset.');
@@ -130,6 +114,12 @@ export function SupportTicketPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isOnline) {
+      setErrorMsg('You are currently offline. Your complaint details are saved as a local draft and will not be lost.');
+      showToast('error', 'Offline Mode', 'Internet connection is unavailable. Complaint saved locally as draft.');
+      return;
+    }
+
     setErrorMsg('');
 
     if (!formData.fullName || !formData.email || !formData.phone) {
@@ -158,6 +148,7 @@ export function SupportTicketPage() {
       setComplaintRef(ref);
       setIsSubmitting(false);
       setSubmitted(true);
+      clearDraft();
 
       showToast('success', 'Complaint Submitted', `Complaint Reference: ${ref}`);
 
@@ -176,12 +167,9 @@ export function SupportTicketPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 space-y-8">
       {/* Page Header */}
-      <div className="bg-gradient-to-r from-[#0f3b6c] to-[#0284c7] text-white p-6 sm:p-10 rounded-3xl shadow-lg text-center space-y-2">
-        <span className="text-[11px] font-bold uppercase tracking-widest bg-white/20 px-3.5 py-1.5 rounded-full inline-block">
-          Customer Support &amp; Quality Assurance
-        </span>
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">Product Support &amp; Complaint</h1>
-        <p className="text-slate-200 text-xs sm:text-sm max-w-xl mx-auto">
+      <div className="bg-gradient-to-r from-[#0f3b6c] to-[#0284c7] text-white py-4 px-6 rounded-2xl shadow-sm text-center space-y-1">
+        <h1 className="text-lg sm:text-xl font-bold tracking-tight">Product Support &amp; Complaint</h1>
+        <p className="text-slate-200 text-xs max-w-xl mx-auto">
           Tell us about the issue with your purchased product, and our support team will review your complaint.
         </p>
       </div>

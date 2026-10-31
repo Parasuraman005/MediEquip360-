@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Globe, Cpu, CheckCircle2, Activity, FileText } from 'lucide-react';
-import { categories } from '../data/categories';
-import { products } from '../data/products';
-import { ProductCard } from '../components/products/ProductCard';
-import { useSEO } from '../hooks/useSEO';
-import { analytics } from '../utils/analytics';
+import { categories } from '../../data/categories';
+import { products } from '../../data/products';
+import { ProductCard } from '../../components/products/ProductCard';
+import { useSEO } from '../../hooks/useSEO';
+import { analytics } from '../../utils/analytics';
 
 export function HomePage() {
   useSEO({
@@ -23,10 +23,7 @@ export function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 bg-sky-500/20 text-sky-300 text-xs font-semibold px-3.5 py-1.5 rounded-full border border-sky-400/30 backdrop-blur-sm mx-auto lg:mx-0">
-                <ShieldCheck className="w-4 h-4 text-sky-300" />
-                <span>Smarter Medical Equipment. Better Healthcare.</span>
-              </div>
+
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight leading-tight">
                 Medical Equipment for Every <span className="text-sky-300">Healthcare Need</span>
               </h1>

@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { FileText, CheckCircle2, ArrowRight, RotateCcw, Loader2 } from 'lucide-react';
-import { categories } from '../data/categories';
-import { trustedBrands } from '../data/products';
-import { useSEO } from '../hooks/useSEO';
-import { useToast } from '../components/common/Toast';
-import { getStoredUTMParameters } from '../utils/utm';
-import { analytics } from '../utils/analytics';
+import { FileText, CheckCircle2, ArrowRight, RotateCcw, Loader2, Save, WifiOff } from 'lucide-react';
+import { categories } from '../../data/categories';
+import { trustedBrands } from '../../data/products';
+import { useSEO } from '../../hooks/useSEO';
+import { useToast } from '../../components/common/Toast';
+import { useOffline, useFormDraft } from '../../hooks/useOffline';
+import { getStoredUTMParameters } from '../../utils/utm';
+import { analytics } from '../../utils/analytics';
 
 export function RequestQuotePage() {
   useSEO({
@@ -16,6 +17,7 @@ export function RequestQuotePage() {
   });
 
   const { showToast } = useToast();
+  const { isOnline } = useOffline();
   const [searchParams] = useSearchParams();
   const preProduct = searchParams.get('product') || '';
   const preBrand = searchParams.get('brand') || '';
@@ -40,7 +42,7 @@ export function RequestQuotePage() {
     additionalRequirements: '',
   };
 
-  const [formData, setFormData] = useState(initialFormState);
+  const [formData, setFormData, clearDraft] = useFormDraft('quote_request', initialFormState);
 
   useEffect(() => {
     if (preProduct) {
@@ -50,16 +52,21 @@ export function RequestQuotePage() {
         manufacturerPreference: preBrand || prev.manufacturerPreference,
       }));
     }
-  }, [preProduct, preBrand]);
+  }, [preProduct, preBrand, setFormData]);
 
   const handleClearForm = () => {
-    setFormData(initialFormState);
+    clearDraft();
     setErrors({});
     showToast('info', 'Form Cleared', 'All form fields have been reset.');
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isOnline) {
+      showToast('error', 'Offline Mode', 'Your internet connection is unavailable. Your quote request is saved as a local draft and can be submitted when reconnected.');
+      return;
+    }
+
     const newErrors: Record<string, string> = {};
 
     if (!formData.fullName.trim()) newErrors.fullName = 'Full Name is required';
@@ -85,6 +92,7 @@ export function RequestQuotePage() {
       setReferenceId(ref);
       setIsSubmitting(false);
       setSubmitted(true);
+      clearDraft();
 
       showToast('success', 'Quote Request Submitted', `Reference ID: ${ref}`);
 
@@ -101,13 +109,10 @@ export function RequestQuotePage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#0f3b6c] to-[#0284c7] text-white p-8 sm:p-12 rounded-3xl shadow-lg text-center space-y-4">
-        <span className="text-xs font-bold uppercase tracking-widest bg-white/20 px-3.5 py-1.5 rounded-full inline-block">
-          Demo Procurement
-        </span>
-        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Request a Quote</h1>
-        <p className="text-slate-200 text-sm max-w-xl mx-auto">
-          Submit equipment specifications and delivery requirements to generate a demonstration quotation reference on MediEquip360.
+      <div className="bg-gradient-to-r from-[#0f3b6c] to-[#0284c7] text-white py-4 px-6 rounded-2xl shadow-sm text-center space-y-1">
+        <h1 className="text-lg sm:text-xl font-bold tracking-tight">Request a Quote</h1>
+        <p className="text-slate-200 text-xs max-w-xl mx-auto">
+          Submit equipment specifications and delivery requirements to generate a demonstration quotation reference.
         </p>
       </div>
 
